@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ticket Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#concerts">Concerts</a></li>
+                <li><a href="#betting">Betting</a></li>
+                <li><a href="#movies">Movies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="event-section">
+            <h2>Welcome to the Ticket Booking Website</h2>
+            <p>Please login to continue.</p>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-message" class="error-message"></p>
+        </section>
+
+        <!-- Concerts Section -->
+        <section id="concerts" class="event-section" style="display: none;">
+            <h2>Concerts</h2>
+            <div class="event-list" id="concert-list">
+                <!-- Concert events will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Betting Events Section -->
+        <section id="betting" class="event-section" style="display: none;">
+            <h2>Betting Events</h2>
+            <div class="event-list" id="betting-list">
+                <!-- Betting events will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Movies Section -->
+        <section id="movies" class="event-section" style="display: none;">
+            <h2>Movies</h2>
+            <div class="event-list" id="movie-list">
+                <!-- Movie events will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Book Your Ticket</h2>
+            <form id="booking-form">
+                <label for="event-name">Event:</label>
+                <input type="text" id="event-name" name="event-name" readonly>
+
+                <label for="event-date">Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+
+                <label for="tickets">Number of Tickets:</label>
+                <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+
+                <label for="user-name">Your Name:</label>
+                <input type="text" id="user-name" name="user-name" required>
+
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" name="user-email" required>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Booking Confirmed!</h2>
+            <p id="confirmation-message"></p>
+            <button id="close-confirmation">Close</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
